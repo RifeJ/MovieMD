@@ -1,26 +1,31 @@
-# Logs
-logs
-*.log
+# Зависимости (самое важное!)
+node_modules/
+.pnp
+.pnp.js
+
+# Секреты (твой API ключ от TMDB здесь!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Результаты сборки
+dist/
+dist-ssr/
+*.local
+
+# Логи и временные файлы
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+.eslintcache
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
+# Настройки IDE (VS Code, WebStorm)
+.vscode/
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-
-.env
