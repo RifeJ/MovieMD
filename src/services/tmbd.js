@@ -1,4 +1,4 @@
-const API_KEY = "2812d099eb0a17bac30da911fe0d64b8";
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
 
 export const fetchPopular = async () => {
@@ -96,7 +96,7 @@ export const fetchUniverse = async (id, type) => {
         endpoint = `/discover/tv?with_genres=35&with_keywords=9799`;
         break;
       case "crime":
-          endpoint = `/discover/tv?with_genres=80`;
+        endpoint = `/discover/tv?with_genres=80`;
         break;
       case "k-drama":
         endpoint = `/discover/tv?with_genres=18&with_original_language=ko`;

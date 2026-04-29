@@ -1,17 +1,24 @@
-# React + Vite
+# 🎬 Movie Discovery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Современное веб-приложение для поиска фильмов и сериалов, построенное на базе **TMDB API**. Проект сфокусирован на высокой производительности, удобном UI/UX и правильном управлении состоянием данных.
 
-Currently, two official plugins are available:
+## 🚀 Стек технологий
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Frontend:** React 18 + Vite
+- **Styling:** Tailwind CSS (для быстрой и адаптивной верстки)
+- **Data Fetching:** [TanStack Query (React Query)](https://tanstack.com/query/latest) — используется для кэширования запросов, управления `staleTime` и минимизации нагрузки на API.
+- **Slider:** Swiper.js — для плавных коллекций и каруселей.
+- **API:** TMDB API (The Movie Database).
 
-## React Compiler
+## 🛠 Ключевые особенности
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Smart Fetching:** Использование `useQueries` для одновременной загрузки нескольких коллекций (Marvel, DC, Netflix и др.).
+- **Universal Components:** Реализована универсальная страница фильтрации (`FilterPage`), которая меняет контент (Movies/TV Series) через пропсы, минимизируя дублирование кода.
+- **Caching Strategy:** Настроен `staleTime`, что позволяет приложению работать быстрее и экономить трафик пользователя.
 
-## Expanding the ESLint configuration
+## 📦 Как запустить проект
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# MovieMD" 
+1. Клонируйте репозиторий:
+   ```bash
+   git clone [https://github.com/ВАШ_ЛОГИН/НАЗВАНИЕ_РЕПО.git](https://github.com/ВАШ_ЛОГИН/НАЗВАНИЕ_РЕПО.git)
+   ```
