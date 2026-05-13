@@ -20,10 +20,10 @@ function YearSearch({ onYearSelect }) {
     <div ref={menuRef} className="flex items-center">
       <label className="font-medium mr-5 text-gray-200">Year</label>
 
-      <div className="relative w-48">
+      <div className="relative w-50">
         <div
           onClick={() => setShowDropdown(!showDropdown)}
-          className="bg-[#050a1e] py-2.5 px-5 border border-primary rounded-[25px] text-gray-300 flex justify-between items-center cursor-pointer hover:border-blue-400 transition-all">
+          className=" py-2.5 px-5 border border-primary rounded-[25px] text-gray-300 flex justify-between items-center cursor-pointer hover:border-blue-400 transition-all">
           <span className="truncate">{selectedYear}</span>
           <span
             className={`text-[10px] ml-2 transition-transform ${showDropdown ? "rotate-180" : ""}`}>

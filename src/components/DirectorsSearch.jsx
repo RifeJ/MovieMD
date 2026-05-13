@@ -20,10 +20,10 @@ function DirectorsSearch({ onDirectorSelect }) {
 
   return (
     <div ref={menuRef} className="flex items-center">
-      <label htmlFor="directorName" className="font-medium mr-5">
+      <label htmlFor="directorName" className="font-medium mr-[16.6px]">
         Director
       </label>
-      <div className="w-38 bg-transparent py-2.5 px-5 border border-primary rounded-[25px] overflow-hidden">
+      <div className="w-50 bg-transparent py-2.5 px-5 border border-primary rounded-[25px] overflow-hidden">
         <input
           type="text"
           id="directorName"
@@ -35,7 +35,7 @@ function DirectorsSearch({ onDirectorSelect }) {
             setShowDropdown(true);
           }}
           placeholder="Type director name"
-          className="outline-none"
+          className="outline-none w-full"
         />
         {showDropdown && results.length > 0 && (
           <ul

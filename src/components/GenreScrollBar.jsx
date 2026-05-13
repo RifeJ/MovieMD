@@ -20,7 +20,7 @@ function GenreScrollBar({ setSelectedGenre, selectedGenre, type = "movie" }) {
         {(data?.genres || data)?.map((genre) => (
           <SwiperSlide key={genre.id} style={{ width: "auto" }}>
             <button
-              className={`px-7 py-3  border-[0.5px] border-secondary rounded-full ${selectedGenre === genre.id ? "bg-secondary" : "bg-transparent"}`}
+              className={`px-7 py-3  border-[0.5px] border-primary rounded-full ${selectedGenre === genre.id ? "bg-primary" : "bg-transparent"}`}
               onClick={() => setSelectedGenre(genre.id)}>
               {genre.name}
             </button>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import YearSearch from "./YearSearch";
 import CountrySearch from "./CountrySearch";
 import ActorSearch from "./ActorSearch";
@@ -16,6 +16,8 @@ function MovieSeriesSearch({ type }) {
     countryCode: "",
     actorId: "",
     filmId: "",
+    directorId: "",
+    filmName: "",
   });
 
   const { data, isLoading } = useQuery({
@@ -23,17 +25,28 @@ function MovieSeriesSearch({ type }) {
     queryFn: () => fetchPlusFilters(type),
   });
 
+  useEffect(() => {
+    setFilters({
+      year: "",
+      countryCode: "",
+      actorId: "",
+      filmId: "",
+      directorId: "",
+      filmName: "",
+    });
+  }, [type]);
+
   const filtersConfirm = (value) => {
     setFilters((prev) => ({ ...prev, ...value }));
     console.log("Applied Filters:", value);
   };
 
   return (
-    <div className="flex flex-col justify-center gap-15 border border-primary rounded-3xl py-10 px-10">
-      <div className="flex gap-18.75">
-        <img src={logoFilter} alt="Filter Logo" />
-        <div className="flex flex-col">
-          <div className="flex items-center justify-center gap-18">
+    <div className="flex flex-col justify-center gap-15 border border-primary rounded-3xl py-10 px-10 mx-auto">
+      <div className="flex gap-20">
+        <img src={logoFilter} alt="Filter Logo" className="w-70  h-70" />
+        <div key={type} className="flex flex-col items-start justify-center ">
+          <div className="flex items-center justify-center gap-10 mb-10">
             <YearSearch
               onYearSelect={(year) => setFilters((prev) => ({ ...prev, year }))}
             />
@@ -52,8 +65,9 @@ function MovieSeriesSearch({ type }) {
               }
             />
           </div>
-          <div className="flex items-center justify-center gap-18">
+          <div className="flex items-center justify-center gap-10">
             <NameSearch
+              type={type}
               onNameSelect={(id, name) =>
                 setFilters((prev) => ({
                   ...prev,
@@ -70,18 +84,19 @@ function MovieSeriesSearch({ type }) {
                   directorName: name,
                 }))
               }
+              s
             />
+          </div>
+          <div className="w-210 mt-10">
+            <GenreScrollBar type={type} />
+            <button
+              onClick={() => filtersConfirm(filters)}
+              className="cursor-pointer bg-primary p-3 rounded-[10px] font-bold w-33">
+              {isLoading ? "Filtering..." : "Apply Filters"}
+            </button>
           </div>
         </div>
       </div>
-      <div>
-        <GenreScrollBar type={type} />
-      </div>
-      <button
-        onClick={() => filtersConfirm(filters)}
-        className="cursor-pointer bg-primary p-3 rounded-[10px] font-bold w-33">
-        Apply Filters
-      </button>
     </div>
   );
 }

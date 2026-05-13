@@ -151,10 +151,10 @@ export const fetchCountries = async () => {
   return data.sort((a, b) => a.english_name.localeCompare(b.english_name));
 };
 
-export const fetchPopularByName = async (query) => {
+export const fetchPopularByName = async (query, type) => {
   const url = query
-    ? `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`
-    : `${BASE_URL}/movie/popular?api_key=${API_KEY}`;
+    ? `${BASE_URL}/search/${type}?api_key=${API_KEY}&query=${query}`
+    : `${BASE_URL}/${type}/popular?api_key=${API_KEY}`;
 
   const res = await fetch(url);
   if (!res.ok) throw new Error("Failed to fetch movies");

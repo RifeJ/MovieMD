@@ -23,7 +23,7 @@ function ActorSearch({ onActorSelect }) {
       <label htmlFor="actorName" className="font-medium mr-5">
         Actor
       </label>
-      <div className="w-38 bg-transparent py-2.5 px-5 border border-primary rounded-[25px] overflow-hidden">
+      <div className="w-50 bg-transparent py-2.5 px-5 border border-primary rounded-[25px] overflow-hidden">
         <input
           type="text"
           id="actorName"
